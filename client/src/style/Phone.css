@@ -1,0 +1,460 @@
+@import url("https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap");
+/* Global styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-font: "Source Sans Pro", sans-serif;
+  --secondary-font: "Herr Von Muellerhoff", cursive;
+  --body-font: "Cabin", sans-serif;
+  --main-font-color-dark: #252525;
+  --secondary-font-color: #c59d5f;
+  --body-font-color: #515151;
+}
+html {
+  font-family: var(--body-font);
+  color: var(--body-font-color);
+  scroll-behavior: smooth;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+}
+section {
+  padding: 3.9rem auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  display: flex;
+  margin-top: 50px;
+}
+a {
+  text-decoration: none;
+  transition: 0.8s;
+}
+.a:hover {
+  letter-spacing: 3px;
+  color: black;
+}
+li {
+  list-style-type: none;
+  color: white;
+  padding: 7px;
+}
+footer {
+  background-color: black;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: auto;
+  padding: 10px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+}
+/* ------------------------------------------------------------------- */
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+}
+.nav {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #000000;
+  opacity: 0.8;
+}
+.menuToggle {
+  color: white;
+  font-size: 1.8rem;
+  position: absolute;
+  top: 60%;
+  right: 10%;
+  transform: translateY(-90%);
+  cursor: pointer;
+  z-index: 1500;
+}
+.fa-times {
+  display: none;
+}
+.logo {
+  color: var(--secondary-font-color);
+  letter-spacing: 4px;
+  font-family: var(--secondary-font);
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  background-color: rgb(17, 17, 17);
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2rem;
+  z-index: 1250;
+  transform: translateX(100%);
+  transition: transform 0.6s;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.5s;
+}
+.open .fa-times {
+  display: block;
+}
+.open .fa-bars {
+  display: none;
+}
+.open .nav-list {
+  transform: translateX(0);
+}
+.open .nav::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav-link {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  transition: 0.6s;
+}
+.nav-link:hover {
+  color: goldenrod;
+  text-decoration: underline;
+  letter-spacing: 2px;
+}
+/* Hero */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url("/src/image/hero.jpg") center no-repeat;
+  background-size: cover;
+  margin-top: 0;
+  display: flex;
+}
+.hero-headline-light {
+  color: white;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--main-font);
+  opacity: 0;
+  animation: scale 1s forwards;
+  animation-delay: 0.5s;
+}
+.headline-light {
+  color: white;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--main-font);
+}
+.headline-dark {
+  color: black;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--main-font);
+}
+.letter {
+  font-size: 4.4rem;
+}
+.sub-headline {
+  color: var(--secondary-font-color);
+  font-family: var(--secondary-font);
+  font-size: 3.1rem;
+  font-weight: normal;
+  line-height: 0.7;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+.hero-sub-headline {
+  color: var(--secondary-font-color);
+  font-family: var(--secondary-font);
+  font-size: 3.1rem;
+  font-weight: normal;
+  line-height: 0.7;
+  font-weight: normal;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeUp 1s forwards;
+  animation-delay: 1.2s;
+}
+.separator {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+.line {
+  background-color: #fff;
+  height: 0.2rem;
+  max-width: 9.4rem;
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  animation: width 1.9s forwards;
+  animation-delay: 2.2s;
+}
+.asterisk {
+  color: var(--secondary-font-color);
+  font-size: 0.8rem;
+  padding: 10px;
+  opacity: 0;
+  animation: spin 2s forwards;
+  animation-delay: 2.3s;
+}
+.line-left::before,
+.line-right::before {
+  content: "";
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  border: 0.5rem solid transparent;
+}
+.line-left::before {
+  border-left-color: white;
+  left: 0;
+}
+.line-right::before {
+  border-right-color: white;
+  right: 0;
+}
+.words {
+  color: #c59d5f;
+  font-size: 1.1rem;
+  font-family: var(--main-font);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeDown 1s forwards;
+  animation-delay: 2.9s;
+}
+.btn {
+  padding: 9px 14px;
+  margin-top: 20px;
+  font-size: 12px;
+  font-style: var(--main-font);
+  text-transform: uppercase;
+  border: 1px solid black;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  background-color: white;
+  color: black;
+  opacity: 0;
+  animation: fadeDown 1s forwards;
+  animation-delay: 3s;
+}
+.btn:hover {
+  background-color: var(--secondary-font-color);
+  border: 1px solid white;
+  color: white;
+}
+/* discover- our-story */
+.h2 {
+  line-height: 0.4;
+}
+.h1 {
+  padding-bottom: 20px;
+}
+.para {
+  font-size: 1rem;
+  padding: 10px;
+  font-family: var(--main-font);
+}
+.a {
+  color: var(--secondary-font-color);
+  text-decoration: underline;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.img {
+  max-width: auto;
+  max-height: auto;
+  padding-top: 20px;
+  display: flex;
+}
+/* section story ends!!! */
+.banner {
+  background: url("/src/image/tasteful-recipes.jpg") center no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+/* section banner ends!!! */
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.5rem;
+  padding: 20px 5px;
+  overflow: hidden;
+}
+.margin {
+  margin-top: 30px;
+}
+/* section menu ends!!! */
+.blend {
+  background: url("/src/image/perfect-blend.jpg") center no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+/* section blend ends!!! */
+/* no culinary delight section */
+.font {
+  font-size: 1.3rem;
+}
+
+.follow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
+.follow > ul {
+  display: flex;
+}
+.follow li {
+  font-size: 1rem;
+}
+.follow li:hover {
+  color: #dfac60;
+  font-size: 1.2rem;
+}
+
+.news-letter-btn {
+  padding: 8px;
+  border: 1px solid white;
+  background-color: #fff;
+}
+.news-letter-btn:hover {
+  color: green;
+}
+.news-letter-input {
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid white;
+  margin-right: none;
+  background-color: #fff;
+}
+.upclass {
+  color: white;
+  padding: 15px;
+  font-size: 2rem;
+  border: 1px solid red;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.upclass:hover {
+  animation: up 1.5s infinite;
+}
+.copyright {
+  width: 100%;
+  margin-top: 40px;
+  color: white;
+  opacity: 0.6;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  0% {
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+@keyframes fadeDown {
+  0% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scale {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes width {
+  0% {
+    width: 0%;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(720deg);
+  }
+}
+@keyframes up {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
